@@ -1,2 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+.container {
+    display: flex;
+}
+
+.container.row {
+    flex-direction: row;
+}
+
+.container.column {
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
