@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import {HttpService} from "./services/http.service";
+import {UserService} from "./services/user.service";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,11 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MaterialModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [
+    HttpService,
+    UserService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
