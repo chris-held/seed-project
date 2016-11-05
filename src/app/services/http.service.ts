@@ -3,6 +3,7 @@ import {Http, Headers, URLSearchParams} from '@angular/http';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import {CookieService} from 'angular2-cookie/core';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -11,9 +12,19 @@ export class HttpService {
     http: Http;
     baseUrl: string;
 
+    private _accessToken: string;
+    get accessToken(): string {
+        return this.cookieService.get("btphat");
+    }
+
+    set accessToken(token: string) {
+        this.cookieService.put("btphat", token);
+    }
+
     constructor(
         http: Http,
         private toastr: ToastsManager,
+        private cookieService: CookieService,
         private router: Router) {
         this.http = http;
         this.baseUrl = environment.apiUrl;
@@ -41,10 +52,9 @@ export class HttpService {
         let headers = new Headers();
         headers.append("Content-Type", "application/json");
         let url = this.getUrl(route);
-        //TODO - create an identityManager to store access token and the logged in user's id
-        //if (this.accessToken) {
-        //    parms.access_token = this.accessToken;
-        //}
+        if (this.accessToken) {
+            parms.access_token = this.accessToken;
+        }
         let params = new URLSearchParams();
         for (var key in parms) {
             var value = parms[key];
@@ -63,10 +73,9 @@ export class HttpService {
         headers.append("Content-Type", "application/json");
         let url = this.getUrl(route);
         let parms: any = {};
-        //TODO - create an identityManager to store access token and the logged in user's id
-        //if (this.accessToken) {
-        //    parms.access_token = this.accessToken;
-        //}
+        if (this.accessToken) {
+            parms.access_token = this.accessToken;
+        }
 
         let params = new URLSearchParams();
         for (var key in parms) {

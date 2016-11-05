@@ -1,4 +1,7 @@
-<h1>You're logged in!</h1>
-<p>
-  Your user has been logged to the console. Now go make some cool shit.
-</p>
+<div *ngIf="user">
+  <h1>You're logged in as {{user.email}}!</h1>
+  <p>
+    Your user has been logged to the console. Now go make some cool shit.
+  </p>
+</div>
+
