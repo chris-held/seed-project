@@ -1,0 +1,8 @@
+
+<form class="container column">
+  <h1>Login</h1>
+  <legend>u: admin@example.com p: Password1</legend>
+  <md-input name="email" [(ngModel)]="email" placeholder="email"></md-input>
+  <md-input name="password" [(ngModel)]="password" placeholder="password" type="password"></md-input>
+  <button (click)="login()" md-raised-button color="primary">LOGIN</button>
+</form>

@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';*/
+@import './theme.scss';
+
+html, body {
+    height: 100%;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.container {
+    display: flex;
+    padding: 10px;
+}
+
+.container.row {
+    flex-direction: row;
+}
+
+.container.column {
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
