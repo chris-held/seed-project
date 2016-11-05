@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http, Headers, URLSearchParams} from '@angular/http';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -12,6 +13,7 @@ export class HttpService {
 
     constructor(
         http: Http,
+        private toastr: ToastsManager,
         private router: Router) {
         this.http = http;
         this.baseUrl = environment.apiUrl;
@@ -28,10 +30,10 @@ export class HttpService {
 
     handleError(error: any, message: string): void {
         if (error.status === 401 || error.status === 403) {
-            //this.toastr.error("Your session has expired, or you don't have access to that resource. Please login again or contact your supervisor for assistance.")
+            this.toastr.error("Your session has expired, or you don't have access to that resource. Please login again or contact your supervisor for assistance.")
             this.router.navigate(['/login'])
         } else {
-            //this.toastr.error(message)
+            this.toastr.error(message)
         }
     }
 

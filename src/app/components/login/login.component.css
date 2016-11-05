@@ -3,11 +3,3 @@ form {
     flex: 1;
     max-width: 500px;
 }
-
-.main {
-    height: 100%;
-}
-
-form  {
-    margin-bottom: 5em;
-}

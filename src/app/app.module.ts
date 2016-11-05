@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -22,6 +23,7 @@ import {UserService} from "./services/user.service";
     BrowserModule,
     FormsModule,
     HttpModule,
+    ToastModule,
     MaterialModule.forRoot(),
     AppRoutingModule
   ],
