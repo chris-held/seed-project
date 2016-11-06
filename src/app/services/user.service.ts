@@ -10,12 +10,13 @@ import {User} from "../models/user";
 @Injectable()
 export class UserService {
   private _userId: string;
+  //TODO - the name of your cookie should unique per app
   get userId(): string {
-    return this.cookieService.get("btphuid")
+    return this.cookieService.get("ng2spuid")
   }
 
   set userId(id: string) {
-    this.cookieService.put("btphuid", id)
+    this.cookieService.put("ng2spuid", id)
   }
 
   constructor(
