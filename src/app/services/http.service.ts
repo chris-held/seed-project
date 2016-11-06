@@ -11,14 +11,14 @@ import 'rxjs/add/operator/toPromise';
 export class HttpService {
     http: Http;
     baseUrl: string;
-
+    //TODO - the name of your cookie should unique per app
     private _accessToken: string;
     get accessToken(): string {
-        return this.cookieService.get("btphat");
+        return this.cookieService.get("ng2spat");
     }
 
     set accessToken(token: string) {
-        this.cookieService.put("btphat", token);
+        this.cookieService.put("ng2spat", token);
     }
 
     constructor(
