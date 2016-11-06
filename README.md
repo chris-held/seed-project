@@ -2,6 +2,31 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
 
+
+## Using this as a template
+This app is meant to be pulled down and used as a starter app for any angular 2 project. To do so:
+* clone the repo down (or download the source, whichever)
+* rename the `seed-project` folder to whatever you want to name your project
+* delete the `.git` folder
+* change the `name` in `angular-cli.json` and `package.json` files
+* `git init .` (Optional: add any remotes you may have, other git stuff, etc...)
+* npm install
+
+Note: This app makes use of the environments feature that the angular-cli comes with. 
+In `src/environments/environments.ts`, you'll find an `apiUrl` property. This should point to 
+your development server. As a default it points to a dev server that is built to work
+with the user service login / logout methods, but you should switch it to point to your
+server and alter the user service methods to fit your needs as soon as possible.
+
+That's pretty much it. 
+
+## Third Parties 
+The seed project adds a few third parties to make development go quicker:
+* [Angular 2 Material](https://github.com/angular/material2)
+* [Angular 2 Toastr](https://github.com/PointInside/ng2-toastrangular)
+* [Angular 2 Cookie](https://github.com/salemdar/angular2-cookie)
+
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
